@@ -43,6 +43,42 @@ namespace GiocoRPG
             Console.Clear();
 
 
+
+
+
+            Console.WriteLine("=== TEST LEGGI ETA ===");
+
+            try
+            {
+                Console.WriteLine("Inserisci la tua etá");
+                int eta = int.Parse(Console.ReadLine()!);
+
+                if (eta < 0 || eta > 120)
+                throw new OverflowException();
+
+                Console.WriteLine($"Ok, quindi hai {eta} anni!");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("É possibile inserire solo numeri");
+            }
+
+            catch (OverflowException)
+            {
+                Console.WriteLine("Quanti anni hai? Non ci credo neanche se lo vedo, riprova!");
+            }
+
+
+            Console.WriteLine("Premi invio per continuare");
+            Console.ReadLine();
+            Console.Clear();
+
+
+
+
+
+
+
             // ─────────────────────────────────────────────────────────
             // 2. ECCEZIONI PERSONALIZZATE
             // OggettoNonTrovatoException porta ex.NomeOggetto:
@@ -164,4 +200,5 @@ namespace GiocoRPG
 
         }     // fine Main
     }         // fine class Program
-}             // fine namespace GiocoRPG
+}
+// fine namespace GiocoRPG
